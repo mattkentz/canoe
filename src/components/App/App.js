@@ -1,13 +1,16 @@
 import React from 'react';
 import './App.scss';
 
+import Navigation from '../Navigation/Navigation';
+
 const App = ({children}) => {
 
     return (
-        <div className="app">
-            <div className="results">
+        <div className="">
+            <Navigation />
+            <section className="">
                 { children }
-            </div>
+            </section>
         </div>
     );
 }

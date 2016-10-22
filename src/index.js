@@ -8,7 +8,8 @@ import rootReducer from './config/reducer';
 
 // Components
 import App from './components/App/App';
-import HomeContainer from './containers/Home/Home';
+import Destinations from './components/Destinations/Destinations';
+import Trips from './components/Trips/Trips';
 
 
 // Store
@@ -21,7 +22,9 @@ ReactDOM.render(
     <Provider store={store}>
         <Router history={browserHistory}>
             <Route path="/" component={App}>
-                <IndexRoute component={HomeContainer} />
+                <IndexRoute component={Destinations} />
+                <Route path="/destinations" component={Destinations}></Route>
+                <Route path="/trips" component={Trips}></Route>
             </Route>
         </Router>
     </Provider>,
