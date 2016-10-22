@@ -3,7 +3,12 @@ import { routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware from 'redux-saga';
 import createLogger from 'redux-logger';
 
-function configureStore(rootReducer, initialState, history) {
+import rootReducer from './reducer';
+
+// Sagas
+import searchDestinationsSaga from '../containers/SearchDestinations/SearchDestinations.sagas';
+
+function configureStore(initialState, history) {
 
     const devtools = window.devToolsExtension || (() => (noop) => noop);
 
@@ -23,11 +28,15 @@ function configureStore(rootReducer, initialState, history) {
         devtools(),
     ];
 
-    return createStore(
+    const store = createStore(
         rootReducer,
         initialState,
         compose(...enhancers)
-    )
+    );
+
+    sagaMiddleware.run(searchDestinationsSaga);
+
+    return store;
 }
 
 export default configureStore;

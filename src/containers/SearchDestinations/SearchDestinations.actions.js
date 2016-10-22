@@ -7,3 +7,24 @@ export function formFieldUpdate (field, value) {
         value
     }
 }
+
+export function fetchDestinations (value) {
+    return {
+        type: constants.FETCH_DESTINATION_REQUESTED,
+        value
+    }
+}
+
+export function fetchDestinationsSuccess (destinations) {
+    return {
+        type: constants.FETCH_DESTINATION_SUCCESS,
+        destinations
+    }
+}
+
+export function fetchDestinationsFailed (message) {
+    return {
+        type: constants.FETCH_DESTINATION_FAILED,
+        message
+    }
+}

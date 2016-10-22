@@ -11,7 +11,7 @@ const mapStateToProps = (state, props) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         handleFormUpdate: (field, value) => dispatch(actions.formFieldUpdate(field, value)),
-        handleOnSubmit: (value) => { alert(value)}
+        handleOnSubmit: (value) => dispatch(actions.fetchDestinations(value))
     }
 };
 

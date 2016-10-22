@@ -4,7 +4,6 @@ import './index.scss';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import configureStore from './config/store';
-import rootReducer from './config/reducer';
 
 // Components
 import App from './components/App/App';
@@ -14,7 +13,7 @@ import Trips from './components/Trips/Trips';
 
 // Store
 const initialState = {};
-const store = configureStore(rootReducer, initialState, browserHistory );
+const store = configureStore(initialState, browserHistory );
 
 ReactDOM.render(
     <Provider store={store}>
