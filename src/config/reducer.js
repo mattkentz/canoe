@@ -1,15 +1,9 @@
 import { combineReducers } from 'redux';
-
-function root(state = [], action) {
-    switch (action.type) {
-        default:
-            return state;
-    }
-}
+import searchDestination from '../containers/SearchDestinations/SearchDestinations.reducers';
 
 const rootReducer = combineReducers(
     {
-        root: root
+        searchDestination: searchDestination
     }
 );
 

@@ -1,9 +1,12 @@
 import React from 'react';
 
+import SearchDestinations from '../../containers/SearchDestinations/SearchDestinations';
+
 const Destinations = () => {
     return (
         <div>
-            Destinations
+            <p>Destinations</p>
+            <SearchDestinations />
         </div>
     )
 }

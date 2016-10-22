@@ -13,9 +13,7 @@ import Trips from './components/Trips/Trips';
 
 
 // Store
-const initialState = {
-    root: ["Hello"]
-};
+const initialState = {};
 const store = configureStore(rootReducer, initialState, browserHistory );
 
 ReactDOM.render(
