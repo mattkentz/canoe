@@ -7,7 +7,7 @@ import configureStore from './config/store';
 
 // Components
 import App from './components/App/App';
-import Destinations from './components/Destinations/Destinations';
+import Destinations from './containers/Destinations/Destinations';
 import Trips from './components/Trips/Trips';
 
 

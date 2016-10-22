@@ -12,6 +12,31 @@ describe('Search Destination Actions - ', function () {
             expect(action).to.have.property('value', 'Germany');
         });
     });
+    describe('fetchDestinations()', function () {
+        it('should return an object with an action with type, field name and field value', function () {
+            const action = actions.fetchDestinations('Germany');
+            expect(action).to.have.property('type', constants.FETCH_DESTINATION_REQUESTED);
+            expect(action).to.have.property('value', 'Germany');
+        });
+    });
+    describe('fetchDestinationsSuccess()', function () {
+        it('should return an object with an action with type, field name and field value', function () {
+            const destinations = [
+                { name: 'Canada' },
+                { name: 'Portugal' }
+            ];
+            const action = actions.fetchDestinationsSuccess(destinations);
+            expect(action).to.have.property('type', constants.FETCH_DESTINATION_SUCCESS);
+            expect(action).to.have.property('destinations', destinations);
+        });
+    });
+    describe('fetchDestinationsFailed()', function () {
+        it('should return an object with an action with type, field name and field value', function () {
+            const action = actions.fetchDestinationsFailed('Error');
+            expect(action).to.have.property('type', constants.FETCH_DESTINATION_FAILED);
+            expect(action).to.have.property('message', 'Error');
+        });
+    });
 });
 
 describe('Search Destination Reducers - ', function () {
