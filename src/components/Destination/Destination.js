@@ -1,5 +1,6 @@
 import React from 'react';
 import './Destination.scss';
+import { Link } from 'react-router';
 
 const Destination = ({ destination, trips, handleClick }) => {
     function onClick(e) {
@@ -8,7 +9,7 @@ const Destination = ({ destination, trips, handleClick }) => {
 
     return (
         <div className="destination">
-            <div className="destination__bubble">{destination.alpha2Code}</div>
+            <Link to={`/destinations/${destination.name.toLowerCase()}`}><div className="destination__bubble">{destination.alpha2Code}</div></Link>
             <p>{destination.name}</p>
             <select onChange={onClick}>
                 {

@@ -1,9 +1,9 @@
 import React from 'react';
 import './Trip.scss';
 
-const Trip = ({ trip }) => {
+const Trip = ({ trip, index, handleClick }) => {
     return (
-        <div className="trip">
+        <div className="trip" onClick={() => handleClick(index)}>
             <div className="trip__bubble">{trip.name}</div>
             <p>{trip.name}</p>
             { trip.destinations.map( destination => {

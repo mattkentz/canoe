@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Trips from '../../components/Trips/Trips';
+import TripsPage from '../../components/TripsPage/TripsPage';
 import * as actions from './Trips.actions';
 
 const mapStateToProps = (state, props) => {
@@ -16,6 +16,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-const TripsContainer = connect(mapStateToProps, mapDispatchToProps)(Trips);
+const TripsContainer = connect(mapStateToProps, mapDispatchToProps)(TripsPage);
 
 export default TripsContainer;
