@@ -24,7 +24,14 @@ const Trips = ({ trips, tripsForm, handleFormUpdate, handleSubmit }) => {
             </section>
             { trips.map(trip => {
                 return (
-                    <p key={trip.name}>{trip.name}</p>
+                    <div key={trip.name}>
+                        <p>{trip.name}</p>
+                        { trip.destinations.map( destination => {
+                            return (
+                                <li key={destination.name}>{destination.name}</li>
+                            )
+                        })}
+                    </div>
                 )
             })}
         </section>
@@ -32,7 +39,10 @@ const Trips = ({ trips, tripsForm, handleFormUpdate, handleSubmit }) => {
 }
 
 Trips.propTypes = {
-    trips: React.PropTypes.array.isRequired
+    trips: React.PropTypes.array.isRequired,
+    tripsForm: React.PropTypes.object.isRequired,
+    handleFormUpdate: React.PropTypes.func.isRequired,
+    handleSubmit: React.PropTypes.func.isRequired,
 }
 
 export default Trips;
