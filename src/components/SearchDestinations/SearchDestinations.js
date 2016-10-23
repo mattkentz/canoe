@@ -21,4 +21,10 @@ const SearchDestinations = ({ searchForm, handleOnSubmit, handleFormUpdate }) =>
     )
 }
 
+SearchDestinations.propTypes = {
+    searchForm: React.PropTypes.object.isRequired,
+    handleOnSubmit: React.PropTypes.func.isRequired,
+    handleFormUpdate: React.PropTypes.func.isRequired
+};
+
 export default SearchDestinations;

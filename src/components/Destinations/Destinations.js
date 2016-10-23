@@ -16,4 +16,8 @@ const Destinations = ({destinations}) => {
     )
 }
 
+Destinations.propTypes = {
+    destinations: React.PropTypes.array.isRequired
+};
+
 export default Destinations;
