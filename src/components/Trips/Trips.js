@@ -1,4 +1,5 @@
 import React from 'react';
+import Trip from '../Trip/Trip';
 
 const Trips = ({ trips, tripsForm, handleFormUpdate, handleSubmit }) => {
     function onSubmit(e) {
@@ -23,16 +24,7 @@ const Trips = ({ trips, tripsForm, handleFormUpdate, handleSubmit }) => {
                 </form>
             </section>
             { trips.map(trip => {
-                return (
-                    <div key={trip.name}>
-                        <p>{trip.name}</p>
-                        { trip.destinations.map( destination => {
-                            return (
-                                <li key={destination.name}>{destination.name}</li>
-                            )
-                        })}
-                    </div>
-                )
+                return <Trip trip={trip} key={trip.name} />
             })}
         </section>
     )

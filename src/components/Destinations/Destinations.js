@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SearchDestinations from '../../containers/SearchDestinations/SearchDestinations';
+import Destination from '../Destination/Destination';
 
 const Destinations = ({destinations, trips, addToTrip}) => {
 
@@ -9,17 +10,7 @@ const Destinations = ({destinations, trips, addToTrip}) => {
             <header>Destinations</header>
             <SearchDestinations />
             { destinations.map( destination => {
-                function onClick() {
-                    //TODO show all trips to choose from
-                    addToTrip(0, destination);
-                }
-
-                return (
-                    <div key={destination.name}>
-                        <p>{destination.name}</p>
-                        <button onClick={onClick}>Add to trip</button>
-                    </div>
-                )
+                return <Destination key={destination.name} destination={destination} handleClick={addToTrip}/>
             })}
         </section>
     )
