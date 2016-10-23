@@ -1,9 +1,9 @@
 import React from 'react';
 
-const SearchDestinations = ({ searchForm, handleOnSubmit, handleFormUpdate }) => {
+const SearchDestinations = ({ searchDestinationForm, handleSubmit, handleFormUpdate }) => {
     function onSubmit(e) {
         e.preventDefault();
-        handleOnSubmit(searchForm.search);
+        handleSubmit(searchDestinationForm.search);
     }
 
     function onFormUpdate(e) {
@@ -15,15 +15,15 @@ const SearchDestinations = ({ searchForm, handleOnSubmit, handleFormUpdate }) =>
         <div>
             <form onSubmit={onSubmit}>
                 <input type="text" placeholder="Search for destinations..." defaultValue="" name="search" onChange={onFormUpdate}/>
-                <input type="submit" hidden/>
+                <input type="submit"/>
             </form>
         </div>
     )
 }
 
 SearchDestinations.propTypes = {
-    searchForm: React.PropTypes.object.isRequired,
-    handleOnSubmit: React.PropTypes.func.isRequired,
+    searchDestinationForm: React.PropTypes.object.isRequired,
+    handleSubmit: React.PropTypes.func.isRequired,
     handleFormUpdate: React.PropTypes.func.isRequired
 };
 

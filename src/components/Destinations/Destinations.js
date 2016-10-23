@@ -4,15 +4,15 @@ import SearchDestinations from '../../containers/SearchDestinations/SearchDestin
 
 const Destinations = ({destinations}) => {
     return (
-        <div>
-            <p>Destinations</p>
+        <section>
+            <header>Destinations</header>
             <SearchDestinations />
             { destinations.map( destination => {
                 return (
                     <p key={destination.name}>{destination.name}</p>
                 )
             })}
-        </div>
+        </section>
     )
 }
 

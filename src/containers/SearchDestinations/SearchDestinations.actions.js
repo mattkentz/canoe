@@ -2,7 +2,7 @@ import * as constants from './SearchDestinations.constants';
 
 export function formFieldUpdate (field, value) {
     return {
-        type: constants.UPDATE_FORM,
+        type: constants.UPDATE_SEARCH_FORM,
         field,
         value
     }

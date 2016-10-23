@@ -4,14 +4,14 @@ import * as actions from './SearchDestinations.actions';
 
 const mapStateToProps = (state, props) => {
     return {
-        searchForm: state.searchDestination.searchForm
+        searchDestinationForm: state.searchDestinationForm
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         handleFormUpdate: (field, value) => dispatch(actions.formFieldUpdate(field, value)),
-        handleOnSubmit: (value) => dispatch(actions.fetchDestinations(value))
+        handleSubmit: (value) => dispatch(actions.fetchDestinations(value))
     }
 };
 

@@ -1,11 +1,14 @@
 import { combineReducers } from 'redux';
-import searchDestination from '../containers/SearchDestinations/SearchDestinations.reducers';
+import searchDestinationForm from '../containers/SearchDestinations/SearchDestinations.reducers';
 import destinations from '../containers/Destinations/Destinations.reducers';
+import { trips, tripsForm } from '../containers/Trips/Trips.reducers';
 
 const rootReducer = combineReducers(
     {
-        searchDestination: searchDestination,
-        destinations: destinations
+        searchDestinationForm: searchDestinationForm,
+        destinations: destinations,
+        trips: trips,
+        tripsForm: tripsForm,
     }
 );
 

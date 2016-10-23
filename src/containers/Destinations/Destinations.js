@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import Destinations from '../../components/Destinations/Destinations';
-//import * as actions from './Destinations.actions';
 
 const mapStateToProps = (state, props) => {
     return {
