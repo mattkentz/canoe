@@ -10,7 +10,7 @@ const Destinations = ({destinations, trips, addToTrip}) => {
             <header>Destinations</header>
             <SearchDestinations />
             { destinations.map( destination => {
-                return <Destination key={destination.name} destination={destination} handleClick={addToTrip}/>
+                return <Destination key={destination.name} destination={destination} trips={trips} handleClick={addToTrip}/>
             })}
         </section>
     )

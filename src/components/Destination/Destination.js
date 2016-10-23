@@ -1,21 +1,27 @@
 import React from 'react';
 
-const Destination = ({ destination, handleClick }) => {
-    function onClick() {
-        //TODO show all trips to choose from
-        handleClick(0, destination);
+const Destination = ({ destination, trips, handleClick }) => {
+    function onClick(e) {
+        handleClick(e.target.value, destination);
     }
 
     return (
         <div key={destination.name}>
             <p>{destination.name}</p>
-            <button onClick={onClick}>Add to trip</button>
+            <select onChange={onClick}>
+                {
+                    trips.map((trip, i) => {
+                        return <option value={i} key={trip.name}>{trip.name}</option>
+                    })
+                }
+            </select>
         </div>
     )
 }
 
 Destination.propTypes = {
     destination: React.PropTypes.object.isRequired,
+    trips: React.PropTypes.array.isRequired,
     handleClick: React.PropTypes.func.isRequired
 }
 
