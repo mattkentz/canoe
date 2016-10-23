@@ -1,0 +1,20 @@
+@import '../../styles/styles';
+
+.trips__form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.trips__box {
+  width: 80%;
+  padding: 1em;
+  margin-right: 1em;
+}
+
+.trips__button {
+  border: none;
+  padding: 1em;
+  width: 10%;
+  background-color: $color__cta-positive;
+  color: white;
+}

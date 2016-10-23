@@ -1,8 +1,10 @@
 import React from 'react';
+import './Trip.scss';
 
 const Trip = ({ trip }) => {
     return (
-        <div>
+        <div className="trip">
+            <div className="trip__bubble">{trip.name}</div>
             <p>{trip.name}</p>
             { trip.destinations.map( destination => {
                 return (

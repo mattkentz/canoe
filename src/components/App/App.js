@@ -1,14 +1,14 @@
 import React from 'react';
-import './App.scss';
+import './_App.scss';
 
 import Navigation from '../Navigation/Navigation';
 
 const App = ({children}) => {
 
     return (
-        <div className="">
+        <div className="app">
             <Navigation />
-            <section className="">
+            <section className="content">
                 { children }
             </section>
         </div>

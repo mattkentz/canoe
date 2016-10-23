@@ -1,0 +1,17 @@
+@import '../../styles/styles';
+
+.destination {
+  text-align: center;
+  width: 10em;
+}
+
+.destination__bubble {
+  height: 10em;
+  width: 10em;
+  border-radius: 100%;
+  background-color: $color__brand_secondary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

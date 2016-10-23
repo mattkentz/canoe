@@ -1,0 +1,17 @@
+@import "../../styles/styles";
+
+.app {
+  width: 100%;
+  background-color: white;
+  margin: auto;
+}
+
+.content {
+  padding: $spacing__site-content;
+}
+
+@media (min-width: $breakpoint__large) {
+  .app {
+    width: 80%;
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './Destination.scss';
 
 const Destination = ({ destination, trips, handleClick }) => {
     function onClick(e) {
@@ -6,7 +7,8 @@ const Destination = ({ destination, trips, handleClick }) => {
     }
 
     return (
-        <div key={destination.name}>
+        <div className="destination">
+            <div className="destination__bubble">{destination.alpha2Code}</div>
             <p>{destination.name}</p>
             <select onChange={onClick}>
                 {

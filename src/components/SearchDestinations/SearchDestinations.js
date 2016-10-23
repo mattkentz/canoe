@@ -1,4 +1,5 @@
 import React from 'react';
+import './SearchDestinations.scss';
 
 const SearchDestinations = ({ searchDestinationForm, handleSubmit, handleFormUpdate }) => {
     function onSubmit(e) {
@@ -12,12 +13,10 @@ const SearchDestinations = ({ searchDestinationForm, handleSubmit, handleFormUpd
     }
 
     return (
-        <div>
-            <form onSubmit={onSubmit}>
-                <input type="text" placeholder="Search for destinations..." defaultValue="" name="search" onChange={onFormUpdate}/>
-                <input type="submit"/>
-            </form>
-        </div>
+        <form onSubmit={onSubmit} className="search__form">
+            <input type="text" placeholder="Search for destinations..." defaultValue="" name="search" onChange={onFormUpdate} className="search__box"/>
+            <input type="submit" className="search__button" value="GO"/>
+        </form>
     )
 }
 

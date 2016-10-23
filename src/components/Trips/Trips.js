@@ -1,5 +1,6 @@
 import React from 'react';
 import Trip from '../Trip/Trip';
+import './Trips.scss';
 
 const Trips = ({ trips, tripsForm, handleFormUpdate, handleSubmit }) => {
     function onSubmit(e) {
@@ -15,17 +16,19 @@ const Trips = ({ trips, tripsForm, handleFormUpdate, handleSubmit }) => {
     return (
         <section>
             <header>
-                Trips
+                <h1>Trips</h1>
             </header>
             <section>
-                <form onSubmit={onSubmit}>
-                    <input type="text" name="name" onChange={onFormUpdate}/>
-                    <input type="submit"/>
+                <form onSubmit={onSubmit} className="trips__form">
+                    <input type="text" name="name" placeholder="Trip name" onChange={onFormUpdate} className="trips__box"/>
+                    <input type="submit" value="Add" className="trips__button"/>
                 </form>
             </section>
-            { trips.map(trip => {
-                return <Trip trip={trip} key={trip.name} />
-            })}
+            <section className="trips">
+                { trips.map(trip => {
+                    return <Trip trip={trip} key={trip.name} />
+                })}
+            </section>
         </section>
     )
 }

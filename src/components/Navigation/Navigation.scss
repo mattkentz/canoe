@@ -1,0 +1,15 @@
+@import "../../styles/styles";
+
+.navigation {
+  width: 100%;
+  margin: auto;
+  padding: $spacing__site-content;
+  box-sizing: border-box;
+}
+
+.nav-item {
+  margin-right: $spacing__site-content;
+  color: $color__font-headings;
+  text-decoration: none;
+  font-size: $typography__size-headings;
+}
