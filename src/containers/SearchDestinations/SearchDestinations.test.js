@@ -1,7 +1,11 @@
 import { expect } from 'chai';
+import sinon from 'sinon';
+import { call, put } from 'redux-saga/effects';
+import * as api from './SearchDestinations.api';
 import * as actions from './SearchDestinations.actions';
 import * as reducers from './SearchDestinations.reducers';
 import * as constants from './SearchDestinations.constants';
+import * as sagas from './SearchDestinations.sagas';
 
 describe('Search Destination Actions - ', function () {
     describe('formFieldUpdate()', function () {
@@ -66,6 +70,59 @@ describe('Search Destination Reducers - ', function () {
             const newState = reducers.searchForm(initialState, action);
 
             expect(newState).to.have.property('search', 'England');
+        });
+    });
+});
+
+describe('Search Destination Sagas - ', function () {
+    describe('fetchDestinations()', function () {
+        it('should return a FETCH_DESTINATION_SUCCESS action', () => {
+            const action = {
+                value: 'France'
+            };
+
+            const destinations = [
+                {
+                    name: 'France',
+                    ISO: 'FR'
+                }
+            ];
+
+            const generator = sagas.fetchDestinations(action);
+
+            let next = generator.next(actions.fetchDestinations(action.value));
+
+            expect(next.value).to.deep.equal(call(api.fetchDestinations, action.value));
+
+            next = generator.next(destinations);
+
+            expect(next.value).to.deep.equal(
+                put({
+                    type: constants.FETCH_DESTINATION_SUCCESS,
+                    destinations: destinations
+                })
+            );
+        });
+
+        it('should return a FETCH_DESTINATION_FAILED action', () => {
+            const action = {
+                value: 'ABC'
+            };
+
+            const generator = sagas.fetchDestinations(action);
+
+            let next = generator.next(actions.fetchDestinations(action.value));
+
+            expect(next.value).to.deep.equal(call(api.fetchDestinations, action.value));
+
+            next = generator.throw("Error");
+
+            expect(next.value).to.deep.equal(
+                put({
+                    type: constants.FETCH_DESTINATION_FAILED,
+                    message: "Error"
+                })
+            );
         });
     });
 });
