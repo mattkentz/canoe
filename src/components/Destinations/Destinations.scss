@@ -12,7 +12,7 @@
 }
 
 .trips__popup {
-  position: absolute;
+  position: fixed;
   background-color: rgba(0, 0, 0, 0.3);
   top: 0;
   bottom: 0;
@@ -21,4 +21,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0;
 }

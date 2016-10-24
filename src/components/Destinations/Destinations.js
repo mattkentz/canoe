@@ -11,7 +11,9 @@ const Destinations = ({destinations, trips, addToTrip, children, params}) => {
     }
 
     function openTrips(i) {
-        browserHistory.push(`/destinations/${i}`)
+        if (trips.length > 0) {
+            browserHistory.push(`/destinations/${i}`);
+        }
     }
 
     function back() {
