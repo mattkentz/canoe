@@ -6,11 +6,7 @@
   margin: auto;
 }
 
-.content {
-  padding: $spacing__site-content;
-}
-
-@media (min-width: $breakpoint__large) {
+@media (min-width: $breakpoint__medium) {
   .app {
     width: 80%;
   }

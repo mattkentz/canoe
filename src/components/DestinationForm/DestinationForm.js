@@ -13,9 +13,9 @@ const DestinationForm = ({ destinationForm, handleSubmit, handleFormUpdate }) =>
     }
 
     return (
-        <form onSubmit={onSubmit} className="search__form">
-            <input type="text" placeholder="Search for destinations..." defaultValue="" name="search" onChange={onFormUpdate} className="search__box"/>
-            <input type="submit" className="search__button" value="GO"/>
+        <form onSubmit={onSubmit} className="destination__form">
+            <input type="text" placeholder="Search for destinations..." defaultValue="" name="search" onChange={onFormUpdate} className="destination__box"/>
+            <input type="submit" className="destination__button" value="GO"/>
         </form>
     )
 }

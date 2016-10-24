@@ -1,20 +1,33 @@
 @import '../../styles/styles';
 
-.search__form {
+.destination__form {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
 }
 
-.search__box {
-  width: 80%;
+.destination__box {
+  width: 100%;
   padding: 1em;
   margin-right: 1em;
+  box-sizing: border-box;
 }
 
-.search__button {
+.destination__button {
   border: none;
   padding: 1em;
-  width: 10%;
+  min-width: 20%;
   background-color: $color__cta-positive;
   color: white;
+}
+
+@media (min-width: $breakpoint__medium) {
+  .destination__form {
+    flex-direction: row;
+  }
+
+  .destination__box {
+    width: 80%;
+    margin-right: 1em;
+  }
 }
