@@ -14,6 +14,7 @@ import App from './components/App/App';
 import Destinations from './containers/Destinations/Destinations';
 import TripsPage from './containers/Trips/Trips';
 import Trips from './components/Trips/Trips';
+import Trip from './containers/Trip/Trip';
 
 
 // Store
@@ -29,6 +30,7 @@ ReactDOM.render(
                     <Route path="/destinations/:id" component={Trips}/>
                 </Route>
                 <Route path="/trips" component={TripsPage}></Route>
+                <Route path="/trips/:id" component={Trip}></Route>
             </Route>
         </Router>
     </Provider>,

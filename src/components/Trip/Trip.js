@@ -1,17 +1,35 @@
-import React from 'react';
+import React, { Component }  from 'react';
 import './Trip.scss';
+import Bubble from '../Bubble/Bubble';
 
-const Trip = ({ trip, index, handleClick }) => {
-    return (
-        <div className="trip" onClick={() => handleClick(index)}>
-            <div className="trip__bubble">{trip.name}</div>
-            <p>{trip.name}</p>
-        </div>
-    )
-};
 
-Trip.propTypes = {
-    trip: React.PropTypes.object.isRequired
-};
+class Trip extends Component {
+
+    componentWillMount () {
+        const tripId = this.props.routeParams.id;
+        if (tripId) {
+            this.trip = this.props.trips[tripId]
+        }
+    }
+
+    render () {
+        const trip = this.trip;
+
+        return (
+            <section>
+                <h1>{trip.name}</h1>
+                <hr/>
+                <h4>Destinations</h4>
+                { trip.destinations.map( (destination, i) => {
+                    return <Bubble key={destination.name}
+                                   inner={destination.alpha2Code}
+                                   caption={destination.name}
+                                   index={i}
+                    />
+                })}
+            </section>
+        )
+    }
+}
 
 export default Trip;

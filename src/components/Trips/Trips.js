@@ -11,7 +11,7 @@ const Trips = ({ trips, handleClick }) => {
                                inner={trip.name}
                                caption={trip.name}
                                index={i}
-                               handleClick={handleClick}
+                               handleClick={(i) => handleClick(i)}
                 />
             })}
         </section>
