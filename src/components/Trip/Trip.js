@@ -6,11 +6,6 @@ const Trip = ({ trip, index, handleClick }) => {
         <div className="trip" onClick={() => handleClick(index)}>
             <div className="trip__bubble">{trip.name}</div>
             <p>{trip.name}</p>
-            { trip.destinations.map( destination => {
-                return (
-                    <li key={destination.name}>{destination.name}</li>
-                )
-            })}
         </div>
     )
 };

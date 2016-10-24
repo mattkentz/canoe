@@ -1,12 +1,17 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 
 import SearchDestinations from '../../containers/SearchDestinations/SearchDestinations';
-import Destination from '../Destination/Destination';
+import Bubble from '../Bubble/Bubble';
 import './Destinations.scss';
 
 const Destinations = ({destinations, trips, addToTrip, children, params}) => {
     function handleSelectTrip(i) {
-        addToTrip(i, destinations.find(destination => {return destination.name.toLowerCase() === params.id}));
+        addToTrip(i, destinations[params.id]);
+    }
+
+    function openTrips(i) {
+        browserHistory.push(`/destinations/${i}`)
     }
 
     function back() {
@@ -20,8 +25,13 @@ const Destinations = ({destinations, trips, addToTrip, children, params}) => {
                 <SearchDestinations />
             </section>
             <section className="destinations">
-                { destinations.map( destination => {
-                    return <Destination key={destination.name} destination={destination} trips={trips} handleClick={addToTrip}/>
+                { destinations.map( (destination, i) => {
+                    return <Bubble key={destination.name}
+                                   inner={destination.alpha2Code}
+                                   caption={destination.name}
+                                   index={i}
+                                    handleClick={openTrips}
+                    />
                 })}
             </section>
 
