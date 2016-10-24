@@ -20,13 +20,15 @@ class Trip extends Component {
                 <h1>{trip.name}</h1>
                 <hr/>
                 <h4>Destinations</h4>
-                { trip.destinations.map( (destination, i) => {
-                    return <Bubble key={destination.name}
-                                   inner={destination.alpha2Code}
-                                   caption={destination.name}
-                                   index={i}
-                    />
-                })}
+                <section className="trip__destinations">
+                    { trip.destinations.map( (destination, i) => {
+                        return <Bubble key={destination.name}
+                                       inner={destination.alpha2Code}
+                                       caption={destination.name}
+                                       index={i}
+                        />
+                    })}
+                </section>
             </section>
         )
     }
