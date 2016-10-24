@@ -1,8 +1,8 @@
-import * as constants from './SearchDestinations.constants';
+import * as constants from './DestinationForm.constants';
 
 export function formFieldUpdate (field, value) {
     return {
-        type: constants.UPDATE_SEARCH_FORM,
+        type: constants.UPDATE_DESTINATION_FORM,
         field,
         value
     }

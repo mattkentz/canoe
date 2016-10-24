@@ -1,10 +1,10 @@
 import React from 'react';
-import './SearchDestinations.scss';
+import './DestinationForm.scss';
 
-const SearchDestinations = ({ searchDestinationForm, handleSubmit, handleFormUpdate }) => {
+const DestinationForm = ({ destinationForm, handleSubmit, handleFormUpdate }) => {
     function onSubmit(e) {
         e.preventDefault();
-        handleSubmit(searchDestinationForm.search);
+        handleSubmit(destinationForm.search);
     }
 
     function onFormUpdate(e) {
@@ -20,10 +20,10 @@ const SearchDestinations = ({ searchDestinationForm, handleSubmit, handleFormUpd
     )
 }
 
-SearchDestinations.propTypes = {
-    searchDestinationForm: React.PropTypes.object.isRequired,
+DestinationForm.propTypes = {
+    destinationForm: React.PropTypes.object.isRequired,
     handleSubmit: React.PropTypes.func.isRequired,
     handleFormUpdate: React.PropTypes.func.isRequired
 };
 
-export default SearchDestinations;
+export default DestinationForm;

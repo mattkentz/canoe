@@ -1,7 +1,7 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 
-import SearchDestinations from '../../containers/SearchDestinations/SearchDestinations';
+import DestinationForm from '../../containers/DestinationForm/DestinationForm';
 import Bubble from '../Bubble/Bubble';
 import './Destinations.scss';
 
@@ -22,7 +22,7 @@ const Destinations = ({destinations, trips, addToTrip, children, params}) => {
         <section className="destination-list">
             <header><h1>Destinations</h1></header>
             <section>
-                <SearchDestinations />
+                <DestinationForm />
             </section>
             <section className="destinations">
                 { destinations.map( (destination, i) => {

@@ -1,8 +1,8 @@
 import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
-import * as constants from './SearchDestinations.constants';
-import * as actions from './SearchDestinations.actions';
-import * as api from './SearchDestinations.api';
+import * as constants from './DestinationForm.constants';
+import * as actions from './DestinationForm.actions';
+import * as api from './DestinationForm.api';
 
 export function* fetchDestinations(action) {
     try {

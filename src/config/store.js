@@ -6,7 +6,7 @@ import createLogger from 'redux-logger';
 import rootReducer from './reducer';
 
 // Sagas
-import searchDestinationsSaga from '../containers/SearchDestinations/SearchDestinations.sagas';
+import searchDestinationsSaga from '../containers/DestinationForm/DestinationForm.sagas';
 
 function configureStore(initialState, history) {
 
