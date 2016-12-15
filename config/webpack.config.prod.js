@@ -104,6 +104,12 @@ module.exports = {
         loader: 'babel',
         
       },
+      // "sass" loader converts .scss files to CSS.
+      {
+        test: /\.scss$/,
+        include: paths.appSrc,
+        loaders: ["style", "css", "sass"]
+      },
       // The notation here is somewhat confusing.
       // "postcss" loader applies autoprefixer to our CSS.
       // "css" loader resolves paths in CSS and adds assets as dependencies.

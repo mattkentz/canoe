@@ -42,6 +42,7 @@
     "path-exists": "2.1.0",
     "postcss-loader": "0.13.0",
     "promise": "7.1.1",
+    "pushstate-server": "^2.1.0",
     "react-addons-test-utils": "^15.3.2",
     "react-dev-utils": "^0.2.1",
     "recursive-readdir": "2.1.0",
