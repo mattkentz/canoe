@@ -23,3 +23,11 @@
   align-items: center;
   margin-bottom: 0;
 }
+
+
+.trips__popup .destination {
+  width: 85%;
+  background: white;
+  margin: $spacing__site-content;
+  padding: $spacing__site-content;
+}

@@ -5,15 +5,10 @@ import DestinationForm from '../../containers/DestinationForm/DestinationForm';
 import Bubble from '../Bubble/Bubble';
 import './Destinations.scss';
 
-const Destinations = ({destinations, trips, addToTrip, children, params}) => {
-    function handleSelectTrip(i) {
-        addToTrip(i, destinations[params.id]);
-    }
+const Destinations = ({destinations, children, params}) => {
 
-    function openTrips(i) {
-        if (trips.length > 0) {
-            browserHistory.push(`/destinations/${i}`);
-        }
+    function openDestination(i) {
+      browserHistory.push(`/destinations/${i}`);
     }
 
     function back() {
@@ -32,7 +27,7 @@ const Destinations = ({destinations, trips, addToTrip, children, params}) => {
                                    inner={destination.alpha2Code}
                                    caption={destination.name}
                                    index={i}
-                                   handleClick={openTrips}
+                                   handleClick={openDestination}
                     />
                 })}
             </section>
@@ -41,12 +36,8 @@ const Destinations = ({destinations, trips, addToTrip, children, params}) => {
             children ?
             (
               <section className="trips__popup" onClick={back}>
-              {  React.cloneElement(
-                children,
-                {
-                  handleClick: handleSelectTrip,
-
-                }) }
+                {  React.cloneElement(
+                children) }
               </section>
             ) : null
           }

@@ -1,4 +1,4 @@
-import * as constants from './Destinations.constants';
+import * as constants from './Destination.constants';
 
 export function addToTrip(index, destination) {
     return {
