@@ -1,10 +1,10 @@
 import React from 'react';
 import './TripForm.scss';
 
-const TripForm = ({ tripsForm, handleFormUpdate, handleSubmit }) => {
+const TripForm = ({ tripForm, handleFormUpdate, handleSubmit }) => {
     function onSubmit(e) {
         e.preventDefault();
-        handleSubmit(tripsForm);
+        handleSubmit(tripForm);
     }
 
     function onFormUpdate(e) {
@@ -21,7 +21,7 @@ const TripForm = ({ tripsForm, handleFormUpdate, handleSubmit }) => {
 };
 
 TripForm.propTypes = {
-    tripsForm: React.PropTypes.object.isRequired,
+    tripForm: React.PropTypes.object.isRequired,
     handleFormUpdate: React.PropTypes.func.isRequired,
     handleSubmit: React.PropTypes.func.isRequired,
 };

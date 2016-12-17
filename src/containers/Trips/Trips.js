@@ -1,21 +1,17 @@
 import { connect } from 'react-redux';
-import TripsPage from '../../components/TripsPage/TripsPage';
-import * as actions from './Trips.actions';
+import Trips from '../../components/Trips/Trips';
 
 const mapStateToProps = (state, props) => {
     return {
-        trips: state.trips,
-        tripsForm: state.tripsForm
+        trips: state.trips
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleFormUpdate: (field, value) => dispatch(actions.formFieldUpdate(field, value)),
-        handleSubmit: (formFields) => dispatch(actions.addTrip(formFields))
     }
 };
 
-const TripsContainer = connect(mapStateToProps, mapDispatchToProps)(TripsPage);
+const TripsContainer = connect(mapStateToProps, mapDispatchToProps)(Trips);
 
 export default TripsContainer;

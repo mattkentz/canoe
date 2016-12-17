@@ -12,8 +12,8 @@ import './styles/_styles.scss';
 // Components
 import App from './components/App/App';
 import Destinations from './containers/Destinations/Destinations';
-import TripsPage from './containers/Trips/Trips';
-import Trips from './components/Trips/Trips';
+import TripsPage from './components/TripsPage/TripsPage';
+import Trips from './containers/Trips/Trips';
 import Trip from './containers/Trip/Trip';
 
 

@@ -44,7 +44,6 @@ const Destinations = ({destinations, trips, addToTrip, children, params}) => {
               {  React.cloneElement(
                 children,
                 {
-                  trips: trips,
                   handleClick: handleSelectTrip,
 
                 }) }

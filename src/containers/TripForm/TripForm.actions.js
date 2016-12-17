@@ -1,4 +1,4 @@
-import * as constants from './Trips.constants';
+import * as constants from './TripForm.constants';
 
 export function formFieldUpdate (field, value) {
     return {
