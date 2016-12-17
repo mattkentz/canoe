@@ -18,6 +18,9 @@ import Destination from './containers/Destination/Destination';
 import TripsPage from './components/TripsPage/TripsPage';
 import Trip from './containers/Trip/Trip';
 
+// Caching
+import OfflinePluginRuntime from 'offline-plugin/runtime';
+OfflinePluginRuntime.install();
 
 // Store
 const initialState = StorageHelper.loadState();
