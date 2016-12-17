@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 import './Trip.scss';
-import Bubble from '../Bubble/Bubble';
+import Destinations from '../../components/Destinations/Destinations';
 
 
 class Trip extends Component {
@@ -20,15 +20,7 @@ class Trip extends Component {
                 <h1>{trip.name}</h1>
                 <hr/>
                 <h4>Destinations</h4>
-                <section className="trip__destinations">
-                    { trip.destinations.map( (destination, i) => {
-                        return <Bubble key={destination.name}
-                                       inner={destination.alpha2Code}
-                                       caption={destination.name}
-                                       index={i}
-                        />
-                    })}
-                </section>
+                <Destinations destinations={trip.destinations}></Destinations>
             </section>
         )
     }

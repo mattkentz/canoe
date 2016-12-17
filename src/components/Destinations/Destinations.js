@@ -1,46 +1,20 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
 
-import DestinationForm from '../../containers/DestinationForm/DestinationForm';
 import Bubble from '../Bubble/Bubble';
 import './Destinations.scss';
 
-const Destinations = ({destinations, children, params}) => {
-
-    function openDestination(i) {
-      browserHistory.push(`/destinations/${i}`);
-    }
-
-    function back() {
-        window.history.back();
-    }
+const Destinations = ({destinations, handleClick}) => {
 
     return (
-        <section className="destination-list">
-            <header><h1>Destinations</h1></header>
-            <section>
-                <DestinationForm />
-            </section>
-            <section className="destinations">
-                { destinations.map( (destination, i) => {
-                    return <Bubble key={destination.name}
-                                   inner={destination.alpha2Code}
-                                   caption={destination.name}
-                                   index={i}
-                                   handleClick={openDestination}
-                    />
-                })}
-            </section>
-
-          {
-            children ?
-            (
-              <section className="trips__popup" onClick={back}>
-                {  React.cloneElement(
-                children) }
-              </section>
-            ) : null
-          }
+        <section className="destinations">
+            { destinations.map( (destination, i) => {
+                return <Bubble key={destination.name}
+                               inner={destination.alpha2Code}
+                               caption={destination.name}
+                               index={i}
+                               handleClick={handleClick}
+                />
+            })}
         </section>
     )
 }

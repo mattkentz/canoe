@@ -11,7 +11,7 @@ import './styles/_styles.scss';
 
 // Components
 import App from './components/App/App';
-import Destinations from './containers/Destinations/Destinations';
+import DestinationsPage from './components/DestinationsPage/DestinationsPage';
 import Destination from './containers/Destination/Destination';
 import TripsPage from './components/TripsPage/TripsPage';
 import Trip from './containers/Trip/Trip';
@@ -25,8 +25,8 @@ ReactDOM.render(
     <Provider store={store}>
         <Router history={browserHistory}>
             <Route path="/" component={App} className="app">
-                <IndexRoute component={Destinations} />
-                <Route path="/destinations" component={Destinations}>
+                <IndexRoute component={TripsPage} />
+                <Route path="/destinations" component={DestinationsPage}>
                     <Route path="/destinations/:id" component={Destination}/>
                 </Route>
                 <Route path="/trips" component={TripsPage}></Route>
