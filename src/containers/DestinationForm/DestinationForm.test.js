@@ -1,5 +1,4 @@
 import { expect } from 'chai';
-import sinon from 'sinon';
 import { call, put } from 'redux-saga/effects';
 import * as api from './DestinationForm.api';
 import * as actions from './DestinationForm.actions';
@@ -44,14 +43,14 @@ describe('Destination Form Actions - ', function () {
 });
 
 describe('Destination Form Reducers - ', function () {
-    describe('searchForm()', function () {
+    describe('destinationForm()', function () {
         it('should add a new field to the state', function () {
             const action = {
                 type: constants.UPDATE_DESTINATION_FORM,
                 field: 'search',
                 value: 'Italy'
             }
-            const newState = reducers.searchDestinationForm(null, action);
+            const newState = reducers.destinationForm(null, action);
 
             expect(newState).to.have.property('search', 'Italy');
         });
@@ -67,7 +66,7 @@ describe('Destination Form Reducers - ', function () {
                 value: 'England'
             }
 
-            const newState = reducers.searchDestinationForm(initialState, action);
+            const newState = reducers.destinationForm(initialState, action);
 
             expect(newState).to.have.property('search', 'England');
         });

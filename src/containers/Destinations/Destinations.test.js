@@ -1,5 +1,4 @@
 import { expect } from 'chai';
-import * as actions from './Destinations.actions';
 import * as reducers from './Destinations.reducers';
 import * as constants from './Destinations.constants';
 
