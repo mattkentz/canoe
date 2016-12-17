@@ -32,21 +32,25 @@ const Destinations = ({destinations, trips, addToTrip, children, params}) => {
                                    inner={destination.alpha2Code}
                                    caption={destination.name}
                                    index={i}
-                                    handleClick={openTrips}
+                                   handleClick={openTrips}
                     />
                 })}
             </section>
 
-            { children ?
-                (<section className="trips__popup" onClick={back}>
-                {  React.cloneElement(
-                    children,
-                    {
-                        trips: trips,
-                        handleClick: handleSelectTrip,
+          {
+            children ?
+            (
+              <section className="trips__popup" onClick={back}>
+              {  React.cloneElement(
+                children,
+                {
+                  trips: trips,
+                  handleClick: handleSelectTrip,
 
-                    }) }
-            </section>) : null }
+                }) }
+              </section>
+            ) : null
+          }
         </section>
     )
 }

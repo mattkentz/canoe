@@ -7,7 +7,7 @@ import * as reducers from './DestinationForm.reducers';
 import * as constants from './DestinationForm.constants';
 import * as sagas from './DestinationForm.sagas';
 
-describe('Search Destination Actions - ', function () {
+describe('Destination Form Actions - ', function () {
     describe('formFieldUpdate()', function () {
         it('should return an object with an action with type, field name and field value', function () {
             const action = actions.formFieldUpdate('search', 'Germany');
@@ -43,7 +43,7 @@ describe('Search Destination Actions - ', function () {
     });
 });
 
-describe('Search Destination Reducers - ', function () {
+describe('Destination Form Reducers - ', function () {
     describe('searchForm()', function () {
         it('should add a new field to the state', function () {
             const action = {
@@ -74,7 +74,7 @@ describe('Search Destination Reducers - ', function () {
     });
 });
 
-describe('Search Destination Sagas - ', function () {
+describe('Destination Form Sagas - ', function () {
     describe('fetchDestinations()', function () {
         it('should return a FETCH_DESTINATION_SUCCESS action', () => {
             const action = {

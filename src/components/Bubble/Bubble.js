@@ -12,7 +12,7 @@ const Bubble = ({ inner, caption, index, handleClick }) => {
 
 Bubble.propTypes = {
     inner: React.PropTypes.string.isRequired,
-    caption: React.PropTypes.string.isRequired,
+    caption: React.PropTypes.string,
     index: React.PropTypes.number.isRequired,
     handleClick: React.PropTypes.func,
 };
