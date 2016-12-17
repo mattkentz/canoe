@@ -228,7 +228,12 @@ module.exports = {
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin('static/css/[name].[contenthash:8].css'),
     // Always add Offline Plugin last
-    new OfflinePlugin()
+    new OfflinePlugin({
+      ServiceWorker: {
+        // Entry in your project, will be included into SW file
+        entry: './src/features/ServiceWorkerHelper/ServiceWorkerHelper.js',
+      }
+    })
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
