@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import configureStore from './config/store';
+import StorageHelper from './features/StorageHelper/StorageHelper';
+import throttle from 'lodash/throttle';
 
 // Styles
 import 'normalize.css';
@@ -18,8 +20,15 @@ import Trip from './containers/Trip/Trip';
 
 
 // Store
-const initialState = {};
+const initialState = StorageHelper.loadState();
 const store = configureStore(initialState, browserHistory );
+
+//Throttle so that function is called at most once per second
+store.subscribe(throttle(() => {
+    StorageHelper.saveState({
+        trips: store.getState().trips
+    });
+}, 1000));
 
 ReactDOM.render(
     <Provider store={store}>

@@ -1,0 +1,9 @@
+@import '../../styles/styles';
+
+.trips {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: $spacing__site-content;
+}
