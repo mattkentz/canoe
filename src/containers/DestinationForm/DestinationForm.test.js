@@ -90,7 +90,7 @@ describe('Destination Form ', function () {
 
                 const generator = sagas.fetchDestinations(action);
 
-                let next = generator.next(actions.fetchDestinations(action.value));
+                let next = generator.next();
 
                 expect(next.value).to.deep.equal(call(api.fetchDestinations, action.value));
 
